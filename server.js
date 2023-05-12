@@ -1,3 +1,12 @@
+/*
+    Yang sudah dilakukan :
+    1. Mengeset route untuk ('/' dan '/blog)
+    2. Berhasil melakukan penginsatalan modul dengan npm express 
+    3. Berhasil melakukan penginsatalan modul dengan Nodemon 
+    4. Behasil melakukan Conncet dengan mongo DB dengan menggunakan Mongoose
+*/ 
+
+
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
