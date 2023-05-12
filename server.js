@@ -6,11 +6,14 @@
     4. Behasil melakukan Conncet dengan mongo DB dengan menggunakan Mongoose
 */ 
 
-
+const Product = require('./Models/productmodels');
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
+const product = require('./Models/productmodels');
 
+
+app.use(express.json())
 
 // ROUTES 
 app.get('/', (req, res)=>{
@@ -21,10 +24,20 @@ app.get('/blog', (req, res)=>{
     res.send('Hello Blog My name is adeva ');
 });
 
+app.post('/product', async(req, res) =>{
+    try {
+        const product = await Product.create(req.body)
+        res.status(200).json(product);
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({message: error.message});
+    }
+})
 
 
-
-mongoose.connect('mongodb+srv://admin:adeva10MEI2002@testingapiv1.ojgr6ub.mongodb.net/Node-API?retryWrites=true&w=majority')
+mongoose.set("strictQuery",false)
+mongoose.
+connect('mongodb+srv://admin:adeva10MEI2002@testingapiv1.ojgr6ub.mongodb.net/Node-API?retryWrites=true&w=majority')
 .then(()=>{
     console.log('connected to MongoDB server')
     app.listen(3000, ()=>{
