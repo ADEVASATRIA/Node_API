@@ -1,3 +1,10 @@
+/* 
+    Pada file berikut ini merupakan sebuah model yang nantinya akan digunakan sebagai pengiriman 
+    data yang disimpan sesuai dengan schema yang sudah di deklarasikan yakni di dalam product 
+    Schema terdapat berbagai macam data yakni ada : nama, quantity , price , dan image.
+*/
+
+
 const mongoose = require('mongoose');
 
 
