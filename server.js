@@ -58,6 +58,25 @@ app.post('/products', async(req, res) =>{
     }
 })
 
+// UPDATE
+app.put('/products/:id', async(req, res) => {
+    try {
+        const {id} = req.params;
+        const product = await Product.findByIdAndUpdate(id, req.body)
+
+        //if cannot find a product in database
+        if(!product){
+            return res.status(404).json({message: `cannot find product with id ${id}`});
+        }
+        const updateproduct = await Product.findById(id);
+        res.status(200).json(updateproduct);
+
+    } catch (error) {
+        res.status(500).json({message: error.message});
+
+    }
+})
+
 
 mongoose.set("strictQuery",false)
 mongoose.
