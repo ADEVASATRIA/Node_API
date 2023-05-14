@@ -7,6 +7,7 @@
     5. Berhasil memasukkan model schema
     6. Berhasil melakukan test post Json product & Masuk dalam MongoDB
     7. [] Fetch data or get data from Database
+    8. Update or Edit Data in Database
 
 */ 
 
