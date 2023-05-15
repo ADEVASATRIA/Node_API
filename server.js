@@ -9,6 +9,8 @@
     7. [] Fetch data or get data from Database
     8. Update or Edit Data in Database
 
+    semua REST API dilakukan 
+
 */ 
 
 const Product = require('./Models/productmodels');
